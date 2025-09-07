@@ -6,5 +6,5 @@ export default function Row({ item, deleteTask }) {
         Delete
       </button>
     </li>
-  );
+  )
 }

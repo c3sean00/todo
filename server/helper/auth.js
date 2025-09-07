@@ -1,6 +1,6 @@
-import jwt from 'jsonwebtoken';
+import jwt from 'jsonwebtoken'
 
-console.log('JWT_SECRET_KEY:', process.env.JWT_SECRET_KEY);
+console.log('JWT_SECRET_KEY:', process.env.JWT_SECRET_KEY)
 
 
 
@@ -10,18 +10,18 @@ const auth = (req, res, next) => {
     return res.status(401).json({ message: 'No token provided' })
   }
 
-  const token = authHeader.split(' ')[1];
+  const token = authHeader.split(' ')[1]
   if (!token) {
     return res.status(401).json({ message: 'Invalid token format' })
   }
 
   jwt.verify(token, process.env.JWT_SECRET_KEY, (err, decoded) => {
     if (err) {
-      return res.status(401).json({ message: 'Failed to authenticate token' });
+      return res.status(401).json({ message: 'Failed to authenticate token' })
     }
-    req.user = decoded; // Lisää käyttäjän tiedot pyyntöön
-    next();
-  });
-};
+    req.user = decoded
+    next()
+  })
+}
 
-export { auth };
+export { auth }

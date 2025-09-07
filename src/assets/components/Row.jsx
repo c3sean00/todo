@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 
 export default function Row({ task, onDelete }) {
   return (
@@ -6,5 +6,5 @@ export default function Row({ task, onDelete }) {
       <span>{task.description}</span>
       <button onClick={() => onDelete(task.id)}>Delete</button>
     </div>
-  );
+  )
 }

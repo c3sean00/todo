@@ -1,5 +1,5 @@
-import { Link, useNavigate } from "react-router-dom";
-import { useUser } from "../context/useUser";
+import { Link, useNavigate } from "react-router-dom"
+import { useUser } from "../context/useUser"
 
 export const AuthenticationMode = Object.freeze({
   SignIn: "Login",
@@ -8,20 +8,20 @@ export const AuthenticationMode = Object.freeze({
 
 export default function Authentication({ authenticationMode }) {
   const { user, setUser, signUp, signIn } = useUser();
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    const signFunction = authenticationMode === AuthenticationMode.SignUp ? signUp : signIn;
+    e.preventDefault()
+    const signFunction = authenticationMode === AuthenticationMode.SignUp ? signUp : signIn
 
     signFunction()
       .then(() => {
-        navigate(authenticationMode === AuthenticationMode.SignUp ? "/signin" : "/");
+        navigate(authenticationMode === AuthenticationMode.SignUp ? "/signin" : "/")
       })
       .catch((error) => {
-        alert(error.message);
-      });
-  };
+        alert(error.message)
+      })
+  }
 
   return (
     <div>
