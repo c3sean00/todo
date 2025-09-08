@@ -15,7 +15,7 @@ app.use('/tasks', todoRouter)
 
 
 app.use((err, req, res, next) => {
-  res.status(err.status || 500).json({ message: err.message || 'Internal Server Error' });
+  res.status(err.status || 500).json({ message: err.message || 'Internal Server Error' })
 })
 
 app.listen(PORT, () => {
@@ -23,5 +23,5 @@ app.listen(PORT, () => {
 })
 
 app.get('/', (req, res) => {
-  res.send('Backend is running');
+  res.send('Backend is running')
 })

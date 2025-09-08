@@ -3,11 +3,11 @@ import { useUser } from "../context/useUser"
 
 export const AuthenticationMode = Object.freeze({
   SignIn: "Login",
-  SignUp: "SignUp",
-});
+  SignUp: "SignUp"
+})
 
 export default function Authentication({ authenticationMode }) {
-  const { user, setUser, signUp, signIn } = useUser();
+  const { user, setUser, signUp, signIn } = useUser()
   const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
@@ -46,5 +46,5 @@ export default function Authentication({ authenticationMode }) {
         </Link>
       </form>
     </div>
-  );
+  )
 }
